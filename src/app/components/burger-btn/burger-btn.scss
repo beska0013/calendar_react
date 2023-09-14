@@ -1,0 +1,62 @@
+@import "./../../../assets/scss/link";
+
+
+.burgerBtn {
+  @include size(15px, 25px);
+  @include flex(center);
+  position: relative;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+
+   span{
+    @include size(3px, 25px);
+    border-radius: 8px;
+    background-color: #000000;
+    position: absolute;
+    transition: all .5s ease-in-out;
+    &:nth-child(1){
+        top:0;
+        left: 0;
+        translate: 0 -50%;
+        align-self: flex-start;
+    }
+    &:nth-child(3){
+        bottom:0;
+        right: 0;
+        translate: 0 50%;
+        align-self: flex-end;
+    }
+   }
+   
+
+
+
+
+   &.closed{
+    span:nth-child(1){
+        transform-origin: left;
+        translate: 4px -90%;
+        rotate: 45deg;
+        transition: all .3s ease-in-out;
+        width: 12px;
+       
+    }
+    span:nth-child(2){
+       transform-origin: center;
+        rotate: -45deg;
+        transition: all .3s ease-in-out;
+    }
+    span:nth-child(3){
+        transform-origin: right;
+        translate: -4px 90%;
+        rotate: 45deg;
+        transition: all .3s ease-in-out;
+        width: 12px;
+    }
+   }
+
+}
+
+
+

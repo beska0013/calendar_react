@@ -1,0 +1,10 @@
+.appMain {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: calc(100dvh - 65px);
+  width: 100%;
+}
+
+/*# sourceMappingURL=appMain.css.map */

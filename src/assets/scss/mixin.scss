@@ -1,0 +1,350 @@
+
+
+
+
+
+@mixin flex($spacing : none, $direction : row){
+  display:flex;
+  @if $direction == column{
+    flex-direction: column;
+  }
+  @if $direction == row{
+    flex-direction: row;
+  }
+  @if $spacing == between{
+    justify-content: space-between;
+  }
+  @else if $spacing == around{
+    justify-content: space-around;
+  }
+  @else if $spacing == even{
+    justify-content: space-evenly;
+  }
+  @else if $spacing == center{
+    justify-content:center;
+  }
+  @else if $spacing == start{
+    justify-content:flex-start;
+  }
+  @else if $spacing == end{
+    justify-content:flex-end;
+  }
+  align-items:center;
+}
+
+@mixin square($size){
+  width:$size;
+  height:$size;
+}
+@mixin min-square($size){
+  min-width:$size;
+  min-height:$size;
+}
+@mixin max-square($size){
+  max-width:$size;
+  max-height:$size;
+}
+
+@mixin size($height,$width) {
+  height: $height;
+  width: $width;
+}
+@mixin min-size($height,$width) {
+  min-height: $height;
+  min-width: $width;
+}
+@mixin max-size($height,$width) {
+  max-height: $height;
+  max-width: $width;
+}
+
+@mixin font($name,$color, $size, $weight){
+  color: $color;
+  font-weight: $weight;
+  font-size: $size;
+  font-family: $name, sans-serif;
+  font-style: normal;
+
+}
+
+
+@mixin default_hover($bg_cl){
+    &:hover{
+        background-color: $bg_cl;
+        transition: all 0.3s ease-in-out;
+    }
+}
+
+@mixin default_btn($br_cl, $cl){
+  @include default_hover(#f3f3f3);
+  @include defaultBox();
+  min-width: 75px;
+  outline: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: $cl;
+  transition: all 0.3s ease-in-out;
+  text-transform: capitalize;
+}
+
+@mixin defaultBox(){
+  border: 1px solid #cfcfcf;
+  background-color: transparent;
+  padding: 8px 16px;
+  border-radius: 4px;
+}
+
+@mixin bg($link, $size:20px){
+  background-image: url($link);
+  background-repeat: no-repeat;
+  background-size: $size;
+  background-position: center;
+}
+
+//@mixin disabledBtn(){
+//  cursor: not-allowed;
+//  pointer-events: none;
+//  background-color:$disabled-color-light!important;
+//  border-color: $disabled-color !important;
+//  opacity: .5;
+//  span{
+//    color: $disabled-color !important;
+//  }
+//}
+//
+//@mixin expandBtn($size){
+//  @include square($size);
+//  outline: none;
+//  border: none;
+//  border-radius: 8px;
+//  background-color: transparent;
+//  cursor: pointer;
+//  padding: 8px;
+//  svg, span{
+//    @include square(100%);
+//  }
+//  span{
+//    display: inline-block;
+//  }
+//}
+//
+//@mixin chips($bg-color-main,$sec-color, $sec-color-active){
+//  @include font($main-font, $sec-color, clamp(12px, 1vw, 14px), 600);
+//  background-color: $bg-color-main;
+//  border-radius: 8px;
+//  border: 2px solid $sec-color;
+//  text-transform: capitalize;
+//  padding: 6px 10px;
+//  cursor: pointer;
+//  transition: all 0.3s ease-in-out;
+//  &:hover{
+//    border-color: $sec-color-active;
+//    color: $sec-color-active;
+//    transition: all 0.3s ease-in-out;
+//  }
+//  &.active{
+//    border-color: $sec-color-active;
+//    color: $sec-color-active;
+//    transition: all 0.3s ease-in-out;
+//  }
+//}
+//
+//@mixin mainButton($bg-color-main, $bg-color-secondary, $tx-color:#000000, $fn-size:clamp(16px,  1.75vw, 24px),){
+//  @include flex(center);
+//  gap: .5em;
+//  border-radius: 8px;
+//  padding: 8px 20px;
+//  transition: all 0.3s ease-in-out;
+//  cursor: pointer;
+//  background-color: $bg-color-main;
+//  border: 2px solid $bg-color-secondary;
+//  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.07);
+//  color: $tx-color;
+//  &:hover{
+//    background-color: $white;
+//    color: $bg-color-main;//for svg hover
+//    span{
+//      color: $bg-color-main;
+//      transition: color 0.3s ease-in-out;
+//    }
+//  }
+//  &:active{
+//    transition: all .3s ease-in-out;
+//    box-shadow: 0 0 0 0 transparent;
+//  }
+//  &[disabled]{
+//    @include disabledBtn();
+//  }
+//  svg{
+//    @include square(1em);
+//    fill:currentColor;//for svg hover
+//  }
+//  span{
+//    @include font($main-font, $tx-color, $fn-size,400);
+//    transition: color 0.3s ease-in-out;
+//    &:first-letter{
+//      text-transform: capitalize;
+//    }
+//  }
+//}
+//@mixin transparantBtn($size:39px){
+//  @include square($size);
+//  @include hover_highlightBtn();
+//  background-color: transparent;
+//  border: none;
+//  cursor:pointer;
+//  border-radius: 4px;
+//  padding: 8px;
+//  &[disabled] {
+//    pointer-events: none;
+//    cursor: not-allowed;
+//    opacity: 0.3;
+//  }
+//}
+//
+//@mixin hover_highlightBtn(){
+//  transition: all .3s ease-in-out;
+//  &:hover{
+//    background-color: $highlight;
+//    transition: all .3s ease-in-out;
+//  }
+//}
+//
+//
+//@mixin checkbox($size){
+//  @include square($size);
+//  position: relative;
+//  cursor: pointer;
+//  input{
+//    display: none;
+//    position: absolute;
+//    top:0;
+//    left: 0;
+//  }
+//  span{
+//    @include square(100%);
+//    position: absolute;
+//    top:0;
+//    left: 0;
+//    border: 1px solid #C8C8C8;
+//    border-radius: 4px;
+//  }
+//}
+//@mixin scroll-bar($color, $width, $trackColor: transparent){
+//  scrollbar-width: thin;
+//  &::-webkit-scrollbar-thumb{
+//    background-color: $color;
+//  }
+//  &::-webkit-scrollbar{
+//    width: $width;
+//  }
+//  &::-webkit-scrollbar-track{
+//    background-color: $trackColor;
+//  }
+//}
+//
+//
+//@mixin inputRange($color){
+//  -webkit-appearance: none;
+//  width: 100%;
+//  height: 2px;
+//  border-radius: 5px;
+//  background: $color;
+//  outline: none;
+//  opacity: 0.7;
+//  -webkit-transition: .2s;
+//  transition: opacity .2s;
+//  &:hover{
+//    opacity: 1;
+//  }
+//  &::-webkit-slider-thumb {
+//    -webkit-appearance: none;
+//    appearance: none;
+//    width: 15px;
+//    height: 15px;
+//    border-radius: 50%;
+//    background: $color;
+//    cursor: pointer;
+//  }
+//  &::-moz-range-thumb {
+//    width: 25px;
+//    height: 25px;
+//    border-radius: 50%;
+//    background: $color;
+//    cursor: pointer;
+//  }
+//}
+//@mixin inputEl(){
+//  @include size( 45px,100%);
+//  @include font($main-font, $main-color, clamp(14px, $fm_size_desk-16, 16px), 400);
+//  background-color: $white;
+//  border-radius: 8px;
+//  padding: calc($inbox-space / 2);
+//  outline:none;
+//  border:1px solid $disabled-color;
+//  &::placeholder{
+//    color:$disabled-color;
+//  }
+//}
+//
+//
+//
+//
+//
+//@mixin mainBox($bg: #eaf0fb, $padding: $inbox-space){
+//  background-color:$bg;
+//  box-shadow: 0 1px 16px rgba(0, 0, 0, 0.07);
+//  border-radius: 8px;
+//  padding: $padding;
+//}
+//
+//@mixin secondaryBox($bg: transparant){
+//  background-color:$bg;
+//  border-radius: 8px;
+//  padding: $inbox-space;
+//  border: 1px solid #AAACAE;
+//}
+//
+//@mixin main-content-wrapper(){
+//  @include square(100%);
+//  @include flex(start);
+//
+//  max-width: 1360px;
+//  padding: 1rem;
+//  transition: all .2s ease-in-out;
+//}
+//
+//@mixin tagItem($bg:none,$color:none){
+//  @include font($main-font, $color, clamp(14px, $fm_size_desk-16, 16px), 800);
+//  min-width: clamp(100px, 10vw, 110px);
+//  border-radius: 8px;
+//  padding: 8px;
+//  background-color: $bg;
+//  text-align: center;
+//  &.blue{
+//    color:$primary;
+//    background-color: $primary-cold;
+//  }
+//  &.orange{
+//    color:$orange;
+//    background-color: $orange-cold;
+//  }
+//  &.pink{
+//    color:$pink;
+//    background-color: $pink-cold;
+//  }
+//  &.green{
+//    color:$green;
+//    background-color: $green-cold;
+//  }
+//  &.gray{
+//    color:$gray;
+//    background-color: $gray-cold;
+//  }
+//  &.invalid{
+//    color: $error;
+//    background-color: rgb(207 94 94 / 48%);
+//    border: 1px solid $error;
+//  }
+//
+//}

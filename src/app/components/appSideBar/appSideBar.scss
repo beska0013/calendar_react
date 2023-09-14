@@ -1,0 +1,21 @@
+@import "./../../../assets/scss/link";
+
+
+.appSideBar {
+
+  height: 100%;
+  width: 23rem;
+  transition: all .3s ease-in-out;
+  overflow: hidden;
+  &.closed{
+    width: 0;
+    transition: all .3s ease-in-out;
+  }
+
+  .sidebarWrapper{
+    @include flex(statrt, column);
+    @include square(100%);
+  
+    padding: $default_spacing;
+  }
+}

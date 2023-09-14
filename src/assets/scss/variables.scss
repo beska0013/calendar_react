@@ -1,0 +1,23 @@
+
+
+
+
+$main_font_cl: #0e0e0e;
+$secondary_font_cl: #4c4d4d;
+$main_bg__light_cl: #FFFFFF;
+
+
+
+
+//--spacing---
+
+$default_spacing: 16px;
+$space_around: calc($default_spacing / 2);
+$space_between: calc($default_spacing / 2);
+
+
+$header_item_size: 32px;
+$header_height: 65px;
+
+$content_height: calc(100dvh - $header_height)
+

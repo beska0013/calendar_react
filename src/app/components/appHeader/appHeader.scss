@@ -1,0 +1,50 @@
+@import "./../../../assets/scss/link";
+
+
+
+
+.appHeader{
+  @include flex(between);
+  height: $header_height;
+  padding: 0 $default_spacing;
+  .appHeader_box{
+    @include flex(start);
+    gap: $default_spacing;
+    .title-box{
+      @include flex(center);
+      gap: $space_between;
+      .title-box_title{
+        font-size: $header_item_size;
+        font-weight: 400;
+        color:$secondary_font_cl
+      }
+      .title-box_logo{
+        @include flex(center);
+        align-items: flex-end;
+        @include square($header_item_size);
+        background-image: url("./../../../assets/images/svg/calendarImg.svg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+        .title-box_value{
+          font-weight: 800;
+          color:#FFFFFF;
+          line-height: 140%;
+        }
+
+      }
+    }
+    .circle{
+      border: none
+    }
+    .search{
+        @include bg("./../../../assets/images/svg/search.svg");
+    }
+    .help{
+      @include bg("./../../../assets/images/svg/question.svg");
+    }
+    .settings{
+      @include bg("./../../../assets/images/svg/gear.svg");
+    }
+  }
+}

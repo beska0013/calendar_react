@@ -1,0 +1,68 @@
+.appHeader {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 65px;
+  padding: 0 16px;
+}
+.appHeader .appHeader_box {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+.appHeader .appHeader_box .title-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+.appHeader .appHeader_box .title-box .title-box_title {
+  font-size: 32px;
+  font-weight: 400;
+  color: #4c4d4d;
+}
+.appHeader .appHeader_box .title-box .title-box_logo {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  align-items: flex-end;
+  width: 32px;
+  height: 32px;
+  background-image: url("./../../../assets/images/svg/calendarImg.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+}
+.appHeader .appHeader_box .title-box .title-box_logo .title-box_value {
+  font-weight: 800;
+  color: #FFFFFF;
+  line-height: 140%;
+}
+.appHeader .appHeader_box .circle {
+  border: none;
+}
+.appHeader .appHeader_box .search {
+  background-image: url("./../../../assets/images/svg/search.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+.appHeader .appHeader_box .help {
+  background-image: url("./../../../assets/images/svg/question.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+.appHeader .appHeader_box .settings {
+  background-image: url("./../../../assets/images/svg/gear.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+
+/*# sourceMappingURL=appHeader.css.map */

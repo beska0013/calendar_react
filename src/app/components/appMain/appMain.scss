@@ -1,0 +1,10 @@
+@import "./../../../assets/scss/link";
+
+
+
+
+
+.appMain {
+    @include flex(start);
+    @include size($content_height, 100%);
+}

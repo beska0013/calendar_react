@@ -1,0 +1,34 @@
+@import "../../../../../assets/scss/link";
+
+
+
+
+
+
+.dateRangePicker {
+  position: relative;
+  .dateRangeList{
+    position: absolute;
+    right: 0;
+    top: calc(100% + 4px);
+    border: 1px solid #cfcfcf;
+    background-color: transparent;
+    border-radius: 4px;
+    width: 200%;
+    &.show{
+      @include showVerticalAnimation();
+    }
+    &.hide{
+      @include hideVerticalAnimation();
+    }
+    .dateRangeList_item{
+      @include default_hover(#f3f3f3);
+      padding: 4px 16px;
+      width: 100%;
+      cursor: pointer;
+      transition: all 0.3s ease-in-out;
+      text-transform: capitalize;
+
+    }
+  }
+}
